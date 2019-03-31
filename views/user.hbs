@@ -1,0 +1,51 @@
+  {{>header}}
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        {{#each user}}
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading" style="float:left;">
+            <img src={{this.profilepic}} style="height:90px;width:90px;" class="rounded" alt="Cinque Terre">
+            {{ this.username }}
+            <br>
+            {{ this.bio }}
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+          
+        {{#each posts}}   
+            
+              <div class="post-preview">
+                <a href="/post/{{this._id}}">
+                  <h2 class="post-title">
+                    {{ this.title }}
+                  </h2>
+                  <h3 class="post-subtitle">
+                    {{ this.desc }}
+                  </h3>
+                </a>
+                <p class="post-meta">Posted by
+                  <a href="/user/profile/{{this.user_id._id}}">{{ this.user_id.username }}</a>
+                  on {{ this.createdAt }}</p>
+              </div>
+              <hr>
+
+          {{/each}}
+
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+{{> footer }}

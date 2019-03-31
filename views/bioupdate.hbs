@@ -1,0 +1,23 @@
+{{> header }}
+
+ <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Update</h1>
+             <form action="/user/profile/:id/edit" method="POST">
+          {{#each user}}
+              <div class="form-group">
+                <input type="text" class="form-control" name="bio" id="bio" value={{this.bio}}>
+              </div>
+          {{/each}}
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  {{>footer}}

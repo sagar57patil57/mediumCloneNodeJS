@@ -1,0 +1,58 @@
+{{> header }}
+
+<!-- Page Header -->
+  <header class="masthead" style="background-image: url('/img/contact-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>Create Post</h1>
+            <span class="subheading">Add a New Post here</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <form method="POST" action="/post/create" encType="multipart/form-data">
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Title</label>
+              <input type="text" name="title" value="don" class="form-control" placeholder="Title" id="title" required data-validation-required-message="Please enter the title.">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Description</label>
+              <input type="text" name="desc" value="the desc" class="form-control" placeholder="Description" id="desc" required data-validation-required-message="Please enter description.">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Content</label>
+              <textarea rows="5" name="content" class="form-control" placeholder="Content" id="content" required data-validation-required-message="Please enter the content"></textarea>
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div id="success"></div>
+          <div class="form-group">
+             <input type="file" name="image" class="form-control">
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary" id="sendMessageButton">Create</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+{{> footer }}
